@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Status from "../Status/Status"
 
 const data = {
   preHeading: "Blockchain Connect",
@@ -13,35 +14,35 @@ const walletData = [
     img: "/img/ethereum.png",
     title: "Ethereum",
     content:
-      "A browser extension with great flexibility. The web's most popular wallet",
+      "Ethereum is an open-source blockchain platform for decentralized applications (DApps) and embedded with a native digital currency, ether (ETH)",
   },
   {
     id: 2,
     img: "/img/solana.png",
     title: "Solana",
     content:
-      "A user-friendly wallet that allows you to sign up with your phone number on any device",
+      "Solana is a network designed to provide developers with a highly performant Web 3.0 cloud platform that offers scalability at the Layer 1 blockchain level.",
   },
   {
     id: 3,
     img: "/img/eluvio.png",
     title: "Eluv.io",
     content:
-      "Pair with Trust, Argent, MetaMask & more. Works from any browser, without an extension",
+      "Eluvio is a content blockchain for owner-controlled storage, distribution, and monetization of digital content at scale.",
   },
   {
     id: 4,
     img: "/img/avalanche.svg",
     title: "Avalanche",
     content:
-      "A security-focused cloud wallet with pin codes and multi-factor authentication",
+      "Avalanche is an open-source blockchain platform for launching enterprise blockchain deployments in a highly scalable ecosystem",
   },
   {
     id: 5,
     img: "/img/aptos.png",
     title: "Aptos",
     content:
-      "A simple-to-use wallet that works on both mobile and through a browser extension",
+      "Aptos is a scalable and modular Layer 1 blockchain that leverages novel approaches to transaction flow, parallel execution, and the transaction processing lifecycle",
   },
 ];
 
@@ -84,6 +85,7 @@ class Activity extends Component {
                       <h4 className="mb-0">{item.title}</h4>
                       <p>{item.content}</p>
                     </a>
+                    <Status/>
                   </div>
                 </div>
               );
