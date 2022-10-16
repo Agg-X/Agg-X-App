@@ -19,6 +19,12 @@ class ExploreTwo extends Component {
             })
         .catch(err => console.log(err))
     }
+
+    handleChange(){
+        console.log("change the filtered display")
+        //Add filter logic
+    }
+
     render() {
         return (
             <section className="explore-area">
@@ -31,9 +37,34 @@ class ExploreTwo extends Component {
                                     <span>{this.state.data.preHeading}</span>
                                     <h3 className="mt-3 mb-0">{this.state.data.heading}</h3>
                                 </div>
-                                <div className="intro-btn">
+                                {/* <div className="intro-btn">
                                     <a className="btn content-btn" href="/explore-1">{this.state.data.btnText}</a>
                                 </div>
+                                <ul className="netstorm-tab nav nav-tabs" id="nav-tab">
+                                <li>
+                                    <a className="active" id="nav-home-tab" data-toggle="pill" href="#nav-home">
+                                        <h5 className="m-0">{"1"}</h5>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a id="nav-profile-tab" data-toggle="pill" href="#nav-profile">
+                                        <h5 className="m-0">{"2"}</h5>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a id="nav-contact-tab" data-toggle="pill" href="#nav-contact">
+                                        <h5 className="m-0">{"3"}</h5>
+                                    </a>
+                                </li>
+                            </ul> */}
+                                <select name="selectList" id="selectList" style={{width: 125, border: "solid"}} onChange={this.handleChange}>
+                                  <option value="All">All</option>
+                                  <option value="Ethereum">Ethereum</option>
+                                  <option value="Solana">Solana</option>
+                                  <option value="Eluvio">Eluvio</option>
+                                  <option value="Avalanche">Avalanche</option>
+                                  <option value="Aptos">Aptos</option>
+                                </select>
                             </div>
                         </div>
                     </div>
