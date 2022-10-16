@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 // importing all the themes
 import Landing from "../themes/landing";
@@ -19,19 +19,18 @@ class MyRouts extends React.Component {
     return (
       <div>
         <Router>
-          <Switch>
-            <Route exact path="/" component={Landing} />
-            <Route exact path="/explore-1" component={ExploreOne} />
-            <Route exact path="/item-details" component={ItemDetails} />
-            <Route exact path="/help-center" component={LandingBody} />
-            <Route exact path="/authors" component={Authors} />
-            <Route exact path="/author" component={Author} />
-            <Route exact path="/wallet-connect" component={WalletConnect} />
-            <Route exact path="/create" component={Create} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/signup" component={Signup} />
-            <Route exact path="/eluvio" component={Connect2Eluvio} />
-          </Switch>
+          <Routes>
+            <Route exact path="/" element={<Landing/>} />
+            <Route exact path="/explore-1" element={<ExploreOne/>} />
+            <Route exact path="/item-details" element={<ItemDetails/>} />
+            <Route exact path="/help-center" element={<LandingBody/>} />
+            <Route exact path="/authors" element={<Authors/>} />
+            <Route exact path="/author" element={<Author/>} />
+            <Route exact path="/wallet-connect" element={<WalletConnect/>} />
+            <Route exact path="/create" element={<Create/>} />
+            <Route exact path="/login" element={<Login/>} />
+            <Route exact path="/signup" element={<Signup/>} />
+          </Routes>
         </Router>
       </div>
     );

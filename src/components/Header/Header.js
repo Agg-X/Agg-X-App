@@ -80,8 +80,8 @@ const Header = () => {
                 href="/wallet-connect"
                 className="btn ml-lg-auto btn-bordered-white"
               >
-                <i className="icon-wallet mr-md-2" />
-                Wallet Connect
+                <i className="icon-grid mr-md-2" />
+                Blockchain Connect
               </a>
             </li>
           </ul>

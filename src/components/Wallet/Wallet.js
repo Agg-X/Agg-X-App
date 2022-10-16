@@ -1,10 +1,10 @@
 import React, { Component } from "react";
+import WalletPopup from "./WalletPopup";
 
 const data = {
   preHeading: "Blockchain Connect",
   heading: "Connect to Blockchains",
-  content:
-    "Select desired blockchain and connect to it via wallet connectors",
+  content: "Select desired blockchain and connect to it via wallet connectors",
 };
 
 const walletData = [
@@ -79,10 +79,11 @@ class Activity extends Component {
                 >
                   {/* Single Wallet */}
                   <div className="card single-wallet">
-                    <a className="d-block text-center" href="/login">
+                    <a className="d-block text-center">
                       <img className="avatar-lg" src={item.img} alt="" />
                       <h4 className="mb-0">{item.title}</h4>
                       <p>{item.content}</p>
+                      <WalletPopup />
                     </a>
                   </div>
                 </div>
