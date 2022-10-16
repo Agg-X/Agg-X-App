@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-import { ElvWalletClient } from "@eluvio/elv-client-js/src/walletClient/index";
+import { ElvWalletClient } from "@eluvio/elv-client-js/src/walletClient";
 import { MarketplaceLoader } from "./MarketplaceLoader.js";
 const marketplaceParams = MarketplaceLoader.parseMarketplaceParams();
 
@@ -8,10 +8,10 @@ const marketplaceParams = MarketplaceLoader.parseMarketplaceParams();
 const mode = "staging";
 const network = "main";
 const walletAppUrl = "https://core.test.contentfabric.io/wallet";
-const AuthSection = (walletClient:any) => {
+const AuthSection = (walletClient) => {
 	const [loggedIn, setLoggedIn] = useState(walletClient.loggedIn);
 
-	const LogIn = async ( method:any ) => {
+	const LogIn = async ( method) => {
 		await walletClient.LogIn({
 			method,
 			callbackUrl: window.location.href,
@@ -66,8 +66,11 @@ const Connect2Eluvio = () => {
 		ElvWalletClient.Initialize({
 			network,
 			mode,
-			//marketplaceParams
-		}).then((client:any) => {
+	// 		marketplaceParams: {
+    // tenantSlug,
+    // marketplaceSlug},
+  }
+		).then((client) => {
 			client.walletAppUrl = walletAppUrl;
 
 			window.client = client;
@@ -90,8 +93,19 @@ const Connect2Eluvio = () => {
 	}
 
   return (
-    <div>Connect2Eluvio</div>
-  )
+		<>
+			<div className="app">
+				<div className="container">
+					<div className="row">
+						<div className="col-12">
+							<h1>Eluvio Wallet</h1>
+							<AuthSection walletClient={walletClient} />
+						</div>
+					</div>
+				</div>
+			</div>
+		</>
+  );
 }
 
 export default Connect2Eluvio
