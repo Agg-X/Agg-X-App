@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 const initData = {
     pre_heading: "FAQ",
     heading: "Frequently Asked Questions",
-    content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum obcaecati dignissimos quae quo ad iste ipsum officiis deleniti asperiores sit."
+    content: ""
 }
 
 const data = [
