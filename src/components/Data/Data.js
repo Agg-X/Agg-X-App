@@ -1,119 +1,184 @@
 import React, { Component } from "react";
 
 export const allNftData = [
-    {
+     {
         "id": 1,
-        "img": "/img/auction_1.jpg",
-        "title": "Walking On Air",
+        "img": "/img/eth1.jpg",
+        "title": "Sougen Genesis",
         "owner": "Richard",
-        "price": "1.5 ETH",
+        "price": "0.136 ETH",
         "count": "1 of 1",
-        "btnText": "View NFT"
+        "blockchain":"Ethereum",
     },
     {
         "id": 2,
-        "img": "/img/auction_2.jpg",
-        "title": "Domain Names",
+        "img": "/img/sol2.jpg",
+        "title": "CopeTown",
         "owner": "John Deo",
-        "price": "2.7 ETH",
+        "price": "27 S",
         "count": "1 of 1",
-        "btnText": "View NFT"
+        "blockchain":"Solana",
     },
     {
         "id": 3,
-        "img": "/img/auction_3.jpg",
-        "title": "Trading Cards",
-        "owner": "Arham",
-        "price": "2.3 ETH",
+        "img": "/img/apt2.png",
+        "title": "Aptos Zero",
+        "owner": "John Deo",
+        "price": "1,190 APT",
         "count": "1 of 1",
-        "btnText": "View NFT"
+        "btnText": "View NFT",
+        "blockchain":"Aptos",
     },
-    {
+       {
         "id": 4,
-        "img": "/img/auction_4.jpg",
-        "title": "Industrial Revolution",
-        "owner": "Yasmin",
-        "price": "1.8 ETH",
+        "img": "/img/ava2.png",
+        "title": "Lava Morf",
+        "owner": "Johnson",
+        "price": "100 Ava",
         "count": "1 of 1",
-        "btnText": "View NFT"
+        "btnText": "View NFT",
+        "blockchain":"Avalanche",
     },
     {
         "id": 5,
-        "img": "/img/auction_5.jpg",
-        "title": "Utility",
-        "owner": "Junaid",
-        "price": "1.7 ETH",
+        "img": "/img/eth3.png",
+        "title": "BEEBLE Sky Walker",
+        "owner": "John Deo",
+        "price": "0.075 ETH",
         "count": "1 of 1",
-        "btnText": "View NFT"
-    },
+        "blockchain":"Ethereum",
+    },  
     {
         "id": 6,
-        "img": "/img/auction_6.jpg",
-        "title": "Sports",
-        "owner": "ArtNox",
-        "price": "1.9 ETH",
+        "img": "/img/sol3.jpg",
+        "title": "NFTrees Solana",
+        "owner": "John Deo",
+        "price": "4 S",
         "count": "1 of 1",
-        "btnText": "View NFT"
+        "blockchain":"Solana",
     },
-    {
+     {
         "id": 7,
-        "img": "/img/auction_7.jpg",
-        "title": "Cartoon Heroes",
-        "owner": "Junaid",
-        "price": "3.2 ETH",
+        "img": "/img/eth7.jpg",
+        "title": "Gangster All Sta",
+        "owner": "John Deo",
+        "price": "0.239 ETH",
         "count": "1 of 1",
-        "btnText": "View NFT"
+        "blockchain":"Ethereum",
     },
-    {
+        {
         "id": 8,
-        "img": "/img/auction_8.jpg",
-        "title": "Gaming Chair",
-        "owner": "Johnson",
-        "price": "0.69 ETH",
+        "img": "/img/eth8.jpg",
+        "title": "Gangster All Star",
+        "owner": "John Deo",
+        "price": "0.49 ETH",
         "count": "1 of 1",
-        "btnText": "View NFT"
-    }
+        "blockchain":"Ethereum",
+    },
 ]
 
 export const ethNftData = [
     {
         "id": 1,
-        "img": "/img/auction_1.jpg",
-        "title": "Walking On Air",
+        "img": "/img/eth1.jpg",
+        "title": "Sougen Genesis",
         "owner": "Richard",
-        "price": "1.5 ETH",
+        "price": "0.136 ETH",
         "count": "1 of 1",
-        "btnText": "View NFT"
+        "blockchain":"Ethereum",
     },
     {
         "id": 2,
-        "img": "/img/auction_2.jpg",
-        "title": "Domain Names",
+        "img": "/img/eth2.jpg",
+        "title": "Down Market Duck",
         "owner": "John Deo",
-        "price": "2.7 ETH",
+        "price": "0.049 ETH",
         "count": "1 of 1",
-        "btnText": "View NFT"
+        "blockchain":"Ethereum",
+    },
+    {
+        "id": 3,
+        "img": "/img/eth3.png",
+        "title": "BEEBLE Sky Walker",
+        "owner": "John Deo",
+        "price": "0.075 ETH",
+        "count": "1 of 1",
+        "blockchain":"Ethereum",
+    },
+    {
+        "id": 4,
+        "img": "/img/eth4.png",
+        "title": "The Infernals",
+        "owner": "Richard",
+        "price": "0.247 ETH",
+        "count": "1 of 1",
+        "blockchain":"Ethereum",
+    },
+    {
+        "id": 5,
+        "img": "/img/eth5.png",
+        "title": "Crypto Ninja",
+        "owner": "John Deo",
+        "price": "0.132 ETH",
+        "count": "1 of 1",
+        "blockchain":"Ethereum",
+    },
+    {
+        "id": 6,
+        "img": "/img/eth6.png",
+        "title": "Genuine Undead",
+        "owner": "John Deo",
+        "price": "0.719 ETH",
+        "count": "1 of 1",
+        "blockchain":"Ethereum",
+    },
+    {
+        "id": 7,
+        "img": "/img/eth7.jpg",
+        "title": "Gangster All Sta",
+        "owner": "John Deo",
+        "price": "0.239 ETH",
+        "count": "1 of 1",
+        "blockchain":"Ethereum",
+    },
+        {
+        "id": 8,
+        "img": "/img/eth8.jpg",
+        "title": "Gangster All Star",
+        "owner": "John Deo",
+        "price": "0.49 ETH",
+        "count": "1 of 1",
+        "blockchain":"Ethereum",
     },
 ]
 
 export const solNftData = [
-    {
-        "id": 3,
-        "img": "/img/auction_3.jpg",
-        "title": "Trading Cards",
-        "owner": "Arham",
-        "price": "2.3 ETH",
+       {
+        "id": 1,
+        "img": "/img/sol1.jpg",
+        "title": "Sorcies",
+        "owner": "Richard",
+        "price": "1.72 S",
         "count": "1 of 1",
-        "btnText": "View NFT"
+        "blockchain":"Solana",
     },
     {
-        "id": 4,
-        "img": "/img/auction_4.jpg",
-        "title": "Industrial Revolution",
-        "owner": "Yasmin",
-        "price": "1.8 ETH",
+        "id": 2,
+        "img": "/img/sol2.jpg",
+        "title": "CopeTown",
+        "owner": "John Deo",
+        "price": "27 S",
         "count": "1 of 1",
-        "btnText": "View NFT"
+        "blockchain":"Solana",
+    },
+    {
+        "id": 3,
+        "img": "/img/sol3.jpg",
+        "title": "NFTrees Solana",
+        "owner": "John Deo",
+        "price": "4 S",
+        "count": "1 of 1",
+        "blockchain":"Solana",
     },
 ]
 
@@ -140,42 +205,46 @@ export const eluNftData = [
 
 export const avaNftData = [
     {
-        "id": 7,
-        "img": "/img/auction_7.jpg",
-        "title": "Cartoon Heroes",
+        "id": 1,
+        "img": "/img/ava1.png",
+        "title": "Wolfi",
         "owner": "Junaid",
-        "price": "3.2 ETH",
+        "price": "8.97 Ava",
         "count": "1 of 1",
-        "btnText": "View NFT"
+        "btnText": "View NFT",
+        "blockchain":"Avalanche",
     },
     {
-        "id": 8,
-        "img": "/img/auction_8.jpg",
-        "title": "Gaming Chair",
+        "id": 2,
+        "img": "/img/ava2.png",
+        "title": "Lava Morf",
         "owner": "Johnson",
-        "price": "0.69 ETH",
+        "price": "100 Ava",
         "count": "1 of 1",
-        "btnText": "View NFT"
+        "btnText": "View NFT",
+        "blockchain":"Avalanche",
     }
 ]
 
 export const aptNftData = [
     {
         "id": 1,
-        "img": "/img/auction_1.jpg",
-        "title": "Walking On Air",
+        "img": "/img/apt1.png",
+        "title": "Aptores",
         "owner": "Richard",
-        "price": "1.5 ETH",
+        "price": "4,500 APT",
         "count": "1 of 1",
-        "btnText": "View NFT"
+        "btnText": "View NFT",
+        "blockchain":"Aptos",
     },
     {
         "id": 2,
-        "img": "/img/auction_2.jpg",
-        "title": "Domain Names",
+        "img": "/img/apt2.png",
+        "title": "Aptos Zero",
         "owner": "John Deo",
-        "price": "2.7 ETH",
+        "price": "1,190 APT",
         "count": "1 of 1",
-        "btnText": "View NFT"
+        "btnText": "View NFT",
+        "blockchain":"Aptos",
     },
 ]

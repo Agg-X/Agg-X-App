@@ -15,7 +15,7 @@ class ExploreTwo extends Component {
             .then(res => {
                 this.setState({
                     data: res.data,
-                    exploreData: res.data.exploreData
+                    exploreData: allNftData
                 })
                 // console.log(this.state.data)
             })
@@ -66,26 +66,6 @@ class ExploreTwo extends Component {
                                     <span>{this.state.data.preHeading}</span>
                                     <h3 className="mt-3 mb-0">{this.state.data.heading}</h3>
                                 </div>
-                                {/* <div className="intro-btn">
-                                    <a className="btn content-btn" href="/explore-1">{this.state.data.btnText}</a>
-                                </div>
-                                <ul className="netstorm-tab nav nav-tabs" id="nav-tab">
-                                <li>
-                                    <a className="active" id="nav-home-tab" data-toggle="pill" href="#nav-home">
-                                        <h5 className="m-0">{"1"}</h5>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a id="nav-profile-tab" data-toggle="pill" href="#nav-profile">
-                                        <h5 className="m-0">{"2"}</h5>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a id="nav-contact-tab" data-toggle="pill" href="#nav-contact">
-                                        <h5 className="m-0">{"3"}</h5>
-                                    </a>
-                                </li>
-                            </ul> */}
                                 <select name="selectList" id="selectList" style={{width: 125, border: "solid"}} onChange={this.handleChange}>
                                   <option value="All">All</option>
                                   <option value="Ethereum">Ethereum</option>
@@ -115,9 +95,9 @@ class ExploreTwo extends Component {
                                                     <h5 className="mb-0">{item.title}</h5>
                                                 </a>
                                                 <div className="seller d-flex align-items-center my-3">
-                                                    <span>Owned By</span>
+                                                    <span>Owned On</span>
                                                     <a href="/author">
-                                                        <h6 className="ml-2 mb-0">{item.owner}</h6>
+                                                        <h6 className="ml-2 mb-0">{item.blockchain}</h6>
                                                     </a>
                                                 </div>
                                                 <div className="card-bottom d-flex justify-content-between">
