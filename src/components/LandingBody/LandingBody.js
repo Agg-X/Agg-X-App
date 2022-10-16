@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 const initData = {
     pre_heading: "Features",
     heading: "What do we provide?",
-    content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum obcaecati dignissimos quae quo ad iste ipsum officiis deleniti asperiores sit."
+    content: "AggX is your one-stop shop for building a social profile based on your NFT collections. From minting your NFT credential to viewing your friends' NFT collections, AggX supports NFT aggregation on multiple chains, such as Ethereum, Solana, Eluvio, Avalanche, and Aptos."
 }
 
 const data = [
@@ -11,37 +11,25 @@ const data = [
         id: "1",
         icon: "icon icon-plane text-effect",
         title: "Getting Started",
-        content: "Learn how to create an account, set up your wallet, and what you can do on NetStorm"
+        content: "Learn how to create an account, set up your wallet, and what you can do on AggX"
     },
     {
         id: "2",
         icon: "icon icon-note text-effect",
         title: "Creating",
-        content: "Learn how to create your very first NFT and how to create your NFT collections so you can begin selling and sharing"
-    },
-    {
-        id: "3",
-        icon: "icon icon-handbag text-effect",
-        title: "Buying",
-        content: "Learn how to purchase your first NFT and understand gas fees and what's gas free on NetStorm"
-    },
-    {
-        id: "4",
-        icon: "icon icon-chart text-effect",
-        title: "Selling",
-        content: "Learn how list your NFTs for sale and understand the different ways to list your NFTs"
+        content: "Learn how to mint your very first NFT credential and how to share it on the chain of your choice"
     },
     {
         id: "5",
         icon: "icon icon-link text-effect",
         title: "Partners",
-        content: "Learn how you can partner with us to showcase your NFT drops"
+        content: "Learn how you can link your AggX social profile with other media platforms"
     },
     {
         id: "6",
         icon: "icon icon-flag text-effect",
         title: "Developers",
-        content: "Learn how you can develop with NetStorm &amp; sell them on Marketplace"
+        content: "Learn how you can partner with us to showcase your NFT drops and how you can develop with AggEx"
     }
 ]
 

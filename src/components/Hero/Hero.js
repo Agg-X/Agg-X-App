@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 const initData = {
-    pre_heading: "NetStorm",
+    pre_heading: "Agg-X",
     heading: "Aggregate, collect, and showcast extraordinary NFTs",
     content: "Explore on the first cross-chain NFT aggregator",
     btn_1: "Explore",

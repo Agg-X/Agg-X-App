@@ -106,7 +106,7 @@
     },
     "work": {
         "preHeading": "How It Works",
-        "heading": "Create and sell your NFTs",
+        "heading": "Aggregate and showcase your NFTs",
         "workData": [
             {
                 "id": 1,
@@ -117,8 +117,8 @@
             {
                 "id": 2,
                 "icon": "icons icon-grid text-effect",
-                "title": "Create your collection",
-                "text": "Click Create and set up your collection. Add social links, a description, profile & banner images, and set a secondary sales fee."
+                "title": "Aggregate your collection",
+                "text": "Click aggregate and set up your chain preference. Add social links, a description, and profile & banner images."
             },
             {
                 "id": 3,
