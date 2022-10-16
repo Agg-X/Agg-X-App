@@ -10,26 +10,20 @@ const data = [
     {
         id: "1",
         icon: "icon icon-plane text-effect",
-        title: "Getting Started",
-        content: "Learn how to create an account, set up your wallet, and what you can do on AggX"
+        title: "Gallery",
+        content: "Learn how to create an account, set up your wallet, and display your NFTs on AggX"
     },
     {
         id: "2",
-        icon: "icon icon-note text-effect",
-        title: "Creating",
-        content: "Learn how to mint your very first NFT credential and how to share it on the chain of your choice"
-    },
-    {
-        id: "5",
         icon: "icon icon-link text-effect",
-        title: "Partners",
-        content: "Learn how you can link your AggX social profile with other media platforms"
+        title: "Community",
+        content: "Learn how you can link your social profiles on AggX and interact with other collectors"
     },
     {
-        id: "6",
-        icon: "icon icon-flag text-effect",
-        title: "Developers",
-        content: "Learn how you can partner with us to showcase your NFT drops and how you can develop with AggX"
+        id: "3",
+        icon: "icon icon-note text-effect",
+        title: "Credentials",
+        content: "Learn how to mint your very first credential NFT and how to share it on the chain of your choice"
     }
 ]
 

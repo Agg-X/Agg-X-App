@@ -12,36 +12,31 @@ const walletData = [
     id: 1,
     img: "/img/ethereum.png",
     title: "Ethereum",
-    content:
-      "",
+    content: "",
   },
   {
     id: 2,
     img: "/img/solana.png",
     title: "Solana",
-    content:
-      "",
+    content: "",
   },
   {
     id: 3,
     img: "/img/eluvio.png",
     title: "Eluv.io",
-    content:
-      "",
+    content: "",
   },
   {
     id: 4,
     img: "/img/avalanche.svg",
     title: "Avalanche",
-    content:
-      "",
+    content: "",
   },
   {
     id: 5,
     img: "/img/aptos.png",
     title: "Aptos",
-    content:
-      "",
+    content: "",
   },
 ];
 
@@ -83,7 +78,7 @@ class Activity extends Component {
                       <img className="avatar-lg" src={item.img} alt="" />
                       <h4 className="mb-0">{item.title}</h4>
                       <p>{item.content}</p>
-                      <WalletPopup />
+                      <WalletPopup id={item.id} />
                     </a>
                   </div>
                 </div>
