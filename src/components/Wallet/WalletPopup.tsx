@@ -13,7 +13,7 @@ import { useNavigate } from "react-router-dom";
 import { ethers, Signer } from "ethers";
 import { Connection, PublicKey, clusterApiUrl } from "@solana/web3.js";
 
-import { ElvWalletClient } from "@eluvio/elv-client-js/src/walletClient";
+// import { ElvWalletClient } from "@eluvio/elv-client-js/src/walletClient";
 import { MarketplaceLoader } from "./MarketplaceLoader.js";
 const marketplaceParams = MarketplaceLoader.parseMarketplaceParams();
 
@@ -67,23 +67,21 @@ export default function WalletPopup({ id, navBar = false }: UserWalletProps) {
   const [ connected, setConnected ] = useState(false);
   const [ pubKey, setPubKey ] = useState<PublicKey | null>(null);
   const [walletClient, setWalletClient] = useState<any>(null);
-	useEffect(() => {
-		ElvWalletClient.Initialize({
-			network,
-			mode,
-		}).then((client:any) => {
-			client.walletAppUrl = walletAppUrl;
+	// useEffect(() => {
+	// 	ElvWalletClient.Initialize("").then((client:any) => {
+	// 		client.walletAppUrl = walletAppUrl;
 
-			window.client = client;
+	// 		window.client = client;
 
-			// Replace CanSign method to force popup flow for personal sign with custodial wallet user
-			client.CanSign = () =>
-				client.loggedIn &&
-				client.UserInfo().walletName.toLowerCase() === "metamask";
+	// 		// Replace CanSign method to force popup flow for personal sign with custodial wallet user
+	// 		client.CanSign = () =>
+	// 			client.loggedIn &&
+	// 			client.UserInfo().walletName.toLowerCase() === "metamask";
 
-			setWalletClient(client);
-		});
-	}, []);
+	// 		setWalletClient(client);
+	// 	});
+	// }, []);
+
   useEffect(()=>{
     if ("solana" in window) {
         const solWindow = window as WindowWithSolana;
