@@ -72,6 +72,7 @@
   --nav-brand-height: 55px;
   --top-nav-item-color: #f5f5f5;
   --nav-item-color: #121117;
+  --status-but: hwb(237 58% 0%);
   --primary-color: #4528DC;
   --secondary-color: #57048A;
   --white-color: #f9f9f9;
@@ -1591,6 +1592,20 @@ header .navbar-expand .dropdown:hover > .dropdown-menu {
   background-image: linear-gradient(150deg, var(--secondary-color) 0%, var(--primary-color) 78%);
 }
 
+.btn-connected-status {
+  background-image: linear-gradient(150deg, var(--secondary-color) 0%, var(--primary-color) 78%);
+  line-height: calc(10px);
+}
+
+.btn-disconnected-status {
+  background-image: linear-gradient(150deg, var(--primary-p-color) 78%, var(--primary-l-color));
+  line-height: calc(10px);
+}
+
+.btn-toggle-status {
+  background-image: linear-gradient(150deg, var(--status-but) 78%, var(--primary-l-color));
+}
+
 .card-columns {
   margin: 0 15px;
   -webkit-column-gap: 30px;
@@ -1604,7 +1619,7 @@ header .navbar-expand .dropdown:hover > .dropdown-menu {
 .card {
   padding: 1.5rem;
   border: none;
-  border-radius: 8px;
+  border-radius: 16px;
   background-color: var(--card-bg-color);
   -webkit-box-shadow: 0 3px 20px 0px var(--primary-l-color);
           box-shadow: 0 3px 20px 0px var(--primary-l-color);
@@ -1681,27 +1696,89 @@ header .navbar-expand .dropdown:hover > .dropdown-menu {
           transform: translateY(-5px);
 }
 
-.card.blog-card .blog-thumb img {
+.card-columns {
+  margin: 0 15px;
+  -webkit-column-gap: 30px;
+          column-gap: 30px;
+}
+
+.card-columns .card {
+  margin-bottom: 30px;
+}
+
+.cardd {
+  padding: 1.5rem;
+  border: none;
+  border-radius: 16px;
+  background-color: var(--card-bg-color);
+  -webkit-box-shadow: 0 3px 20px 0px var(--primary-l-color);
+          box-shadow: 0 3px 20px 0px var(--primary-l-color);
+  -webkit-transition-timing-function: cubic-bezier(0.25, 0.25, 0.75, 0.75);
+          transition-timing-function: cubic-bezier(0.25, 0.25, 0.75, 0.75);
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+  -webkit-transition-property: opacity, -webkit-transform;
+  transition-property: opacity, -webkit-transform;
+  transition-property: opacity, transform;
+  transition-property: opacity, transform, -webkit-transform;
+}
+
+.cardd .card-img-top {
   border-radius: 6px;
 }
 
-.card.blog-card .blog-content a {
+.cardd .card-body {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  min-height: 1px;
+  padding: 35px 0 0;
+}
+
+.cardd .card-body h3, .card .card-body h4, .card .card-body h5, .card .card-body h6 {
+  margin-top: 0;
+}
+
+.cardd .card-body .card-bottom span {
   color: var(--white-color);
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
 }
 
-.card.blog-card .blog-content a h4 {
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+.cardd .card-footer {
+  border-radius: 0;
+  background: none;
+  padding: 30px 0;
+  margin: 0 30px;
+  border-top: 1px solid var(--primary-l-color);
 }
 
-.card.blog-card .blog-content a:hover {
-  color: var(--primary-color);
+.cardd .card-footer a {
+  margin: 0 10px;
 }
 
-.card.blog-card .blog-content a:hover h4 {
-  color: var(--primary-color);
+.cardd .card-footer a:not(.btn) {
+  color: var(--primary-p-color);
+}
+
+.cardd .card-footer .card-footer i {
+  margin: 0 5px 2.5px;
+}
+
+.cardd:hover .card-footer {
+  color: #f5f5f5;
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.cardd.no-hover {
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.cardd.no-hover:hover {
+  -webkit-transform: inherit;
+          transform: inherit;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
 }
 
 .swiper-container-horizontal > .swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {

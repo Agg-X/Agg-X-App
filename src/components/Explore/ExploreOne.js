@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import {allNftData, ethNftData, solNftData, eluNftData, avaNftData, aptNftData} from "../Data/Data"
 
 const BASE_URL = "https://my-json-server.typicode.com/themeland/netstorm-json/explore";
 
@@ -9,6 +10,7 @@ class ExploreTwo extends Component {
         exploreData: []
     }
     componentDidMount(){
+        console.log("CDM")
         axios.get(`${BASE_URL}`)
             .then(res => {
                 this.setState({
@@ -19,6 +21,39 @@ class ExploreTwo extends Component {
             })
         .catch(err => console.log(err))
     }
+
+    handleChange = (event) => {
+        console.log("change the filtered display")
+        console.log("option: ", event.target.value)
+        // console.log()
+        //Add filter logic
+        if (event.target.value == "All") {
+            this.setState({
+                exploreData: allNftData
+            })
+        } else if (event.target.value == "Ethereum") {
+            this.setState({
+                exploreData: ethNftData
+            })
+        } else if (event.target.value == "Solana") {
+            this.setState({
+                exploreData: solNftData
+            })
+        } else if (event.target.value == "Eluvio") {
+            this.setState({
+                exploreData: eluNftData
+            })
+        } else if (event.target.value == "Avalanche") {
+            this.setState({
+                exploreData: avaNftData
+            })
+        } else if (event.target.value == "Aptos") {
+            this.setState({
+                exploreData: aptNftData
+            })
+        }
+    }
+
     render() {
         return (
             <section className="explore-area">
@@ -31,9 +66,34 @@ class ExploreTwo extends Component {
                                     <span>{this.state.data.preHeading}</span>
                                     <h3 className="mt-3 mb-0">{this.state.data.heading}</h3>
                                 </div>
-                                <div className="intro-btn">
+                                {/* <div className="intro-btn">
                                     <a className="btn content-btn" href="/explore-1">{this.state.data.btnText}</a>
                                 </div>
+                                <ul className="netstorm-tab nav nav-tabs" id="nav-tab">
+                                <li>
+                                    <a className="active" id="nav-home-tab" data-toggle="pill" href="#nav-home">
+                                        <h5 className="m-0">{"1"}</h5>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a id="nav-profile-tab" data-toggle="pill" href="#nav-profile">
+                                        <h5 className="m-0">{"2"}</h5>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a id="nav-contact-tab" data-toggle="pill" href="#nav-contact">
+                                        <h5 className="m-0">{"3"}</h5>
+                                    </a>
+                                </li>
+                            </ul> */}
+                                <select name="selectList" id="selectList" style={{width: 125, border: "solid"}} onChange={this.handleChange}>
+                                  <option value="All">All</option>
+                                  <option value="Ethereum">Ethereum</option>
+                                  <option value="Solana">Solana</option>
+                                  <option value="Eluvio">Eluvio</option>
+                                  <option value="Avalanche">Avalanche</option>
+                                  <option value="Aptos">Aptos</option>
+                                </select>
                             </div>
                         </div>
                     </div>
