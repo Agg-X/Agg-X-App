@@ -58,10 +58,7 @@ export class MarketplaceLoader {
    */
   static parseMarketplaceParams() {
     const searchParams = new URLSearchParams(window.location.search);
-    const network = searchParams.get("network-name") || "demo";
-    const [tenantDefault, marketplaceDefault] = network == "main" ?
-      [ "bcl", "maskverse-marketplace" ] :
-      [ "starflicks", "starflicks-marketplace"];
+    const [tenantDefault, marketplaceDefault] = [ "bcl", "maskverse-marketplace" ] 
 
     const marketplaceParams = {
       tenantSlug: searchParams.get("tenant-name") || tenantDefault,

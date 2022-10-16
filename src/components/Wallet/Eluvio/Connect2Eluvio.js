@@ -1,27 +1,23 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from "react";
 
 import { ElvWalletClient } from "@eluvio/elv-client-js/src/walletClient";
 import { MarketplaceLoader } from "./MarketplaceLoader.js";
 const marketplaceParams = MarketplaceLoader.parseMarketplaceParams();
 
-
 const mode = "staging";
 const network = "main";
 const walletAppUrl = "https://core.test.contentfabric.io/wallet";
-const AuthSection = (walletClient) => {
+const AuthSection = ({ walletClient }) => {
 	const [loggedIn, setLoggedIn] = useState(walletClient.loggedIn);
 
-	const LogIn = async ( method) => {
+	const LogIn = async (method) => {
 		await walletClient.LogIn({
 			method,
 			callbackUrl: window.location.href,
 			marketplaceParams,
 			clearLogin: true,
 		});
-
-		if (method !== "redirect") {
-			setLoggedIn(true);
-		}
+		setLoggedIn(walletClient.loggedIn);
 	};
 
 	const LogOut = async () => {
@@ -33,7 +29,7 @@ const AuthSection = (walletClient) => {
 		return (
 			<div className="section">
 				<div className="button-row">
-					<button onClick={() => LogIn({ method: "redirect" })}>
+					<button onClick={() => LogIn({ method: "popup" })}>
 						Login
 					</button>
 				</div>
@@ -44,11 +40,7 @@ const AuthSection = (walletClient) => {
 	return (
 		<>
 			<div className="section">
-				<h2>
-					Logged In as{" "}
-					{walletClient.UserInfo()?.email ||
-						walletClient.UserAddress()}
-				</h2>
+				<h2>Logged In as {walletClient.UserAddress()}</h2>
 				<div className="button-row">
 					<button onClick={() => LogOut()}>Log Out</button>
 				</div>
@@ -58,19 +50,13 @@ const AuthSection = (walletClient) => {
 	);
 };
 
-
 const Connect2Eluvio = () => {
-
-    const [walletClient, setWalletClient] = useState(undefined);
+	const [walletClient, setWalletClient] = useState(undefined);
 	useEffect(() => {
 		ElvWalletClient.Initialize({
 			network,
 			mode,
-	// 		marketplaceParams: {
-    // tenantSlug,
-    // marketplaceSlug},
-  }
-		).then((client) => {
+		}).then((client) => {
 			client.walletAppUrl = walletAppUrl;
 
 			window.client = client;
@@ -85,14 +71,10 @@ const Connect2Eluvio = () => {
 	}, []);
 
 	if (!walletClient) {
-		return (
-			<div className="app">
-				<PageLoader />
-			</div>
-		);
+		return <div className="app">404</div>;
 	}
 
-  return (
+	return (
 		<>
 			<div className="app">
 				<div className="container">
@@ -105,7 +87,7 @@ const Connect2Eluvio = () => {
 				</div>
 			</div>
 		</>
-  );
-}
+	);
+};
 
-export default Connect2Eluvio
+export default Connect2Eluvio;
