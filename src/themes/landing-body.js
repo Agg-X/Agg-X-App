@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import Header from '../components/Header/Header';
-import Breadcrumb from '../components/Breadcrumb/Breadcrumb';
 import Land from '../components/LandingBody/LandingBody';
 import Faq from '../components/Faq/Faq';
 import Footer from '../components/Footer/Footer';
@@ -14,7 +13,6 @@ class LandingBody extends Component {
         return (
             <div className="main">
                 <Header />
-                <Breadcrumb title="Landing Body" subpage="Community" page="Help Center" />
                 <Land />
                 <Faq />
                 <Footer />

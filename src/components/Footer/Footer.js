@@ -15,7 +15,7 @@ class Footer extends Component {
             </div>
             {/* Copyright Right */}
             <div className="copyright-right">
-              Made with <i className="fas fa-heart" /> By <a href="#">xxx</a>
+              Made with <i className="fas fa-heart" /> By <a href="#">AggX</a>
             </div>
           </div>
         </div>

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import Header from '../components/Header/Header';
-import Breadcrumb from '../components/Breadcrumb/Breadcrumb';
 import Author from '../components/Authors/Authors';
 import TopSeller from '../components/TopSeller/TopSellerTwo';
 import Footer from '../components/Footer/Footer';
@@ -14,7 +13,6 @@ class Authors extends Component {
         return (
             <div className="main">
                 <Header />
-                <Breadcrumb title="Authors" subpage="Pages" page="Authors" />
                 <Author />
                 <TopSeller />
                 <Footer />
