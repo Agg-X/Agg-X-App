@@ -14,7 +14,6 @@ class Authors extends Component {
             <div className="main">
                 <Header />
                 <Author />
-                <TopSeller />
                 <Footer />
                 <ModalSearch />
                 <ModalMenu />
