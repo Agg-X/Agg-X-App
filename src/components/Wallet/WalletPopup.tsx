@@ -126,6 +126,9 @@ export default function WalletPopup({ id, navBar = false }: UserWalletProps) {
       duration: 2000,
       isClosable: false,
     });
+    if (wallet_n === "MetaMask") {
+      signInMetaMask();
+    }
     var wallets = [];
     try {
       wallets = JSON.parse(window.localStorage.getItem("connectedWallets"));
