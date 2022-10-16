@@ -57,6 +57,7 @@
     ]
   },
   "devDependencies": {
-    "@types/react-modal": "^3.13.1"
+    "@types/react-modal": "^3.13.1",
+    "gh-pages": "^4.0.0"
   }
 }
