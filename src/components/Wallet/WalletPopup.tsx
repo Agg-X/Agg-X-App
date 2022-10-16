@@ -11,6 +11,8 @@ import React, { useEffect, useState } from "react";
 import { useWeb3React } from "@web3-react/core";
 import { useNavigate } from "react-router-dom";
 import { ethers, Signer } from "ethers";
+import { Connection, PublicKey, clusterApiUrl } from "@solana/web3.js";
+
 declare var window: any;
 
 export enum WalletConnector {
@@ -21,6 +23,23 @@ export enum WalletConnector {
 export interface UserWalletProps {
   navBar?: boolean;
   id: number;
+}
+
+type PhantomEvent = "disconnect" | "connect" | "accountChanged";
+
+interface ConnectOpts {
+  onlyIfTrusted: boolean;
+}
+
+interface PhantomProvider {
+  connect: (opts?: Partial<ConnectOpts>) => Promise<{ publicKey: PublicKey }>;
+  disconnect: ()=>Promise<void>;
+  on: (event: PhantomEvent, callback: (args:any)=>void) => void;
+  isPhantom: boolean;
+}
+
+type WindowWithSolana = Window & { 
+  solana?: PhantomProvider;
 }
 
 export default function WalletPopup({ id, navBar = false }: UserWalletProps) {
@@ -36,6 +55,22 @@ export default function WalletPopup({ id, navBar = false }: UserWalletProps) {
   const { library, account, active, activate, chainId, error, deactivate } =
     context;
   const toast = useToast();
+  const [ walletAvail, setWalletAvail ] = useState(false);
+  const [ provider, setProvider ] = useState<PhantomProvider | null>(null);
+  const [ connected, setConnected ] = useState(false);
+  const [ pubKey, setPubKey ] = useState<PublicKey | null>(null);
+
+  useEffect(()=>{
+    if ("solana" in window) {
+        const solWindow = window as WindowWithSolana;
+        if (solWindow?.solana?.isPhantom) {
+            setProvider(solWindow.solana);
+            setWalletAvail(true);
+            // Attemp an eager connection
+            solWindow.solana.connect({ onlyIfTrusted: true });
+        }
+    }
+  }, []);
 
   useEffect(() => {
     if (!selectedConnector) {
@@ -57,6 +92,20 @@ export default function WalletPopup({ id, navBar = false }: UserWalletProps) {
       });
     }
   }, [activate]);
+
+  useEffect( () => {
+    provider?.on("connect", (publicKey: PublicKey)=>{ 
+        console.log(`connect event: ${publicKey}`);
+        setConnected(true); 
+        setPubKey(publicKey);
+    });
+    provider?.on("disconnect", ()=>{ 
+        console.log("disconnect event");
+        setConnected(false); 
+        setPubKey(null);
+    });
+
+  }, [provider]);
 
   const availableWallets = [
     ["MetaMask", "Wallet Connect"],
@@ -118,6 +167,8 @@ export default function WalletPopup({ id, navBar = false }: UserWalletProps) {
   const connectHandler = async (id: number, wallet_n: string) => {
     if (wallet_n === "MetaMask") {
       await signInMetaMask();
+    } else if (wallet_n === "Phantom") {
+      await signInPhantom();
     }
     toast({
       title: "Connected!",
@@ -128,7 +179,11 @@ export default function WalletPopup({ id, navBar = false }: UserWalletProps) {
     });
     if (wallet_n === "MetaMask") {
       signInMetaMask();
+    } else if (wallet_n === "Phantom") {
+      console.log("Sign in Phantom")
+      signInPhantom();
     }
+
     var wallets = [];
     try {
       wallets = JSON.parse(window.localStorage.getItem("connectedWallets"));
@@ -139,7 +194,8 @@ export default function WalletPopup({ id, navBar = false }: UserWalletProps) {
       window.localStorage.setItem("connectedWallets", "[]");
     }
     setIsOpen(false);
-    wallets.push(id);
+
+    // wallets.push(id);
     setThisConnected(true);
     window.localStorage.setItem("connectedWallets", JSON.stringify(wallets));
   };
@@ -179,8 +235,23 @@ export default function WalletPopup({ id, navBar = false }: UserWalletProps) {
     ) as any;
   };
 
+  const signInPhantom = async () => {
+    console.log("Phantom handler")
+    console.log(`connect handler`);
+    console.log(provider)
+    provider?.connect()
+    .catch((err) => { console.error("connect ERROR:", err); });
+  };
+
   const signOutMetaMask = () => {
     setDefaultAccount(null);
+  };
+
+  const signOutPhantom = () => {
+    setDefaultAccount(null);
+    console.log("disconnect handler");
+    provider?.disconnect()
+    .catch((err) => {console.error("disconnect ERROR:", err); });
   };
 
   const accountChangedHandler = (newAccount: React.SetStateAction<null>) => {
