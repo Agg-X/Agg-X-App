@@ -18,29 +18,29 @@ As a credit and credential issuer, Agg-X will be issuing upgradable soul-bond to
 - Database: CockroachDB (a distributed SQL DB) for storing structured user information (name, email, account, password, addresses, etc.)
 
 ## Challenges we ran into
-We ran into a lot of dependency issues while building SDK packages from eluvio sdk and Chakra UI
+- We ran into a lot of dependency issues while building SDK packages from eluvio sdk and Chakra UI
 Connect wallet on other blockchains - especially Eluv.io & Solana - since both are completely new to us
-UI/UX details and responsive design were the part we spent the most time on
-Three-person collaborating and constantly fixing the merge conflicts was also a challenge when we were working on interrelated components or updating/installing packages at the same time
-React data flow - managing complex code base as well as the front logic & data flow between different components
-Eluv.io APIs and sample code are not documented well which took us a while to understand the samples
-CockroachDB has an extensive & complicated setup that the docs do not address clearly
-Connecting our backend service (in cockroach db) and the frontend in a localhost setting was also a bit challenging as we don’t have enough bandwidth to deploy the full backend
+- UI/UX details and responsive design were the part we spent the most time on
+- Three-person collaborating and constantly fixing the merge conflicts was also a challenge when we were working on interrelated components or updating/installing packages at the same time
+- React data flow - managing complex code base as well as the front logic & data flow between different components
+- Eluv.io APIs and sample code are not documented well which took us a while to understand the samples
+- CockroachDB has an extensive & complicated setup that the docs do not address clearly
+- Connecting our backend service (in cockroach db) and the frontend in a localhost setting was also a bit challenging as we don’t have enough bandwidth to deploy the full backend
 
 ## Accomplishments that we're proud of
-The overall idea and our degree of completion! We have delivered a fully functional demo with great UI, and the idea of having NFT Aggregator + Credential Bridge has the infinite potential to unlock more and more user interactions and activities among the entire NFT & Blockchain ecosystem!
-Our fantastic UI brings the best user experience which also fits perfectly with the crypto vibe!
+- The overall idea and our degree of completion! We have delivered a fully functional demo with great UI, and the idea of having NFT Aggregator + Credential Bridge has the infinite potential to unlock more and more user interactions and activities among the entire NFT & Blockchain ecosystem!
+- Our fantastic UI brings the best user experience which also fits perfectly with the crypto vibe!
 
 ## What we learned
-Extensive knowledge of Cryptocurrency and NFTs.
-Experience with different wallet connectors (metamask, walletconnect, solana/phantom, eluvio)
-Extensive growth and experience in making great & responsive UI design
-Agile development in a three-person team and great practice for resolving merge conflicts and dependency issues
-Blockchain Full-stack development & deployment
+- Extensive knowledge of Cryptocurrency and NFTs.
+- Experience with different wallet connectors (metamask, walletconnect, solana/phantom, eluvio)
+- Extensive growth and experience in making great & responsive UI design
+- Agile development in a three-person team and great practice for resolving merge conflicts and dependency issues
+- Blockchain Full-stack development & deployment
 
 ## What’s Next
-Improvements in the speed and performance of fetching and collections from user’s wallet address
-Add more blockchain support including Ploygon, Arbitrum, Optimism, etc.
-Implement the credit / accomplishment score calculating system
-Define and implement the cross-chain credential standards (e.g. a proxy standard on ETH for storing NFT credentials from other blockchains)
-DAO governance on NFT rarity calculation (like TrueFi DAO) & core collectors’ community establishments
+- Improvements in the speed and performance of fetching and collections from user’s wallet address
+- Add more blockchain support including Ploygon, Arbitrum, Optimism, etc.
+- Implement the credit / accomplishment score calculating system
+- Define and implement the cross-chain credential standards (e.g. a proxy standard on ETH for storing NFT credentials from other blockchains)
+- DAO governance on NFT rarity calculation (like TrueFi DAO) & core collectors’ community establishments
