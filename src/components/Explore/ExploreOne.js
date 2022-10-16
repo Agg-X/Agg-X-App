@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import {allNftData, ethNftData, solNftData, eluNftData, avaNftData, aptNftData} from "../Data/Data"
 
 const BASE_URL = "https://my-json-server.typicode.com/themeland/netstorm-json/explore";
 
@@ -9,6 +10,7 @@ class ExploreTwo extends Component {
         exploreData: []
     }
     componentDidMount(){
+        console.log("CDM")
         axios.get(`${BASE_URL}`)
             .then(res => {
                 this.setState({
@@ -20,9 +22,36 @@ class ExploreTwo extends Component {
         .catch(err => console.log(err))
     }
 
-    handleChange(){
+    handleChange = (event) => {
         console.log("change the filtered display")
+        console.log("option: ", event.target.value)
+        // console.log()
         //Add filter logic
+        if (event.target.value == "All") {
+            this.setState({
+                exploreData: allNftData
+            })
+        } else if (event.target.value == "Ethereum") {
+            this.setState({
+                exploreData: ethNftData
+            })
+        } else if (event.target.value == "Solana") {
+            this.setState({
+                exploreData: solNftData
+            })
+        } else if (event.target.value == "Eluvio") {
+            this.setState({
+                exploreData: eluNftData
+            })
+        } else if (event.target.value == "Avalanche") {
+            this.setState({
+                exploreData: avaNftData
+            })
+        } else if (event.target.value == "Aptos") {
+            this.setState({
+                exploreData: aptNftData
+            })
+        }
     }
 
     render() {
