@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 const initData = {
     pre_heading: "FAQ",
     heading: "Frequently Asked Questions",
-    content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum obcaecati dignissimos quae quo ad iste ipsum officiis deleniti asperiores sit."
+    content: ""
 }
 
 const data = [
@@ -11,10 +11,10 @@ const data = [
         id: "1",
         btnClass: "btn d-block text-left w-100 py-4",
         target: "#collapseOne",
-        quote: "How do I create an AggX account?",
+        quote: "What blockchains does AggX support?",
         contentId: "collapseOne",
         contentClass: "collapse show",
-        content: "The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text."
+        content: "We support Etherium, Solona, Eluvio, Avalanche, and Aptos."
     },
     {
         id: "2",
@@ -23,34 +23,34 @@ const data = [
         quote: "Which chain can I aggregate my NFTs from?",
         contentId: "collapseTwo",
         contentClass: "collapse",
-        content: "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source."
+        content: "Each NFT has its own profile view which includes the transaction details."
     },
     {
         id: "3",
         btnClass: "btn d-block text-left w-100 collapsed py-4",
         target: "#collapseThree",
-        quote: "How can I mint my NFT credential?",
+        quote: "Can I use Trust Wallet or Metamask?",
         contentId: "collapseThree",
         contentClass: "collapse",
-        content: "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+        content: "Yes both are supported, for Metamask please choose connect to Etherium."
     },
     {
         id: "4",
         btnClass: "btn d-block text-left w-100 collapsed py-4",
         target: "#collapseFour",
-        quote: "How can I link my AggX social profile with other media platforms?",
+        quote: "How do I access my NFTs?",
         contentId: "collapseFour",
         contentClass: "collapse",
-        content: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
+        content: "Create an AggX account and connect to any blockchains that you own NFTs on."
     },
     {
         id: "5",
         btnClass: "btn d-block text-left w-100 collapsed py-4",
         target: "#collapseFive",
-        quote: "Who can see my AggX social profile?",
+        quote: "How do I create a credential NFT?",
         contentId: "collapseFive",
         contentClass: "collapse",
-        content: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text."
+        content: "You can mint your NFTs to other blockchains using the create view."
     }
 ]
 

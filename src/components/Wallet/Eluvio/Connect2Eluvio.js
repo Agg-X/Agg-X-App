@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
-import { ElvWalletClient } from "@eluvio/elv-client-js/src/walletClient";
+/*
+// import { ElvWalletClient } from "@eluvio/elv-client-js/src/walletClient";
 import { MarketplaceLoader } from "./MarketplaceLoader.js";
 const marketplaceParams = MarketplaceLoader.parseMarketplaceParams();
 
@@ -80,7 +81,6 @@ const Connect2Eluvio = () => {
 				<div className="container">
 					<div className="row">
 						<div className="col-12">
-							<h1>Eluvio Wallet</h1>
 							<AuthSection walletClient={walletClient} />
 						</div>
 					</div>
@@ -91,3 +91,4 @@ const Connect2Eluvio = () => {
 };
 
 export default Connect2Eluvio;
+*/
