@@ -12,6 +12,7 @@ import WalletConnect from "../themes/wallet-connect";
 import Create from "../themes/create";
 import Login from "../themes/login";
 import Signup from "../themes/signup";
+import Connect2Eluvio from './../components/Wallet/Eluvio/Connect2Eluvio';
 
 class MyRouts extends React.Component {
   render() {
@@ -29,6 +30,7 @@ class MyRouts extends React.Component {
             <Route exact path="/create" component={Create} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
+            <Route exact path="/eluvio" component={Connect2Eluvio} />
           </Switch>
         </Router>
       </div>
