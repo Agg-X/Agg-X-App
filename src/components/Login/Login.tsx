@@ -84,8 +84,8 @@ const Login = () => {
                   <div className="col-12">
                     <div className="form-group mt-3">
                       <input
-                        // type="password"
-                        // className="form-control"
+                        type="password"
+                        className="form-control"
                         name="password"
                         placeholder="Enter your Password"
                         required
