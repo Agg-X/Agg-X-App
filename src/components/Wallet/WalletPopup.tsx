@@ -13,6 +13,13 @@ import { useNavigate } from "react-router-dom";
 import { ethers, Signer } from "ethers";
 import { Connection, PublicKey, clusterApiUrl } from "@solana/web3.js";
 
+import { ElvWalletClient } from "@eluvio/elv-client-js/src/walletClient";
+import { MarketplaceLoader } from "./MarketplaceLoader.js";
+const marketplaceParams = MarketplaceLoader.parseMarketplaceParams();
+
+const mode = "staging";
+const network = "main";
+const walletAppUrl = "https://core.test.contentfabric.io/wallet";
 declare var window: any;
 
 export enum WalletConnector {
@@ -59,7 +66,24 @@ export default function WalletPopup({ id, navBar = false }: UserWalletProps) {
   const [ provider, setProvider ] = useState<PhantomProvider | null>(null);
   const [ connected, setConnected ] = useState(false);
   const [ pubKey, setPubKey ] = useState<PublicKey | null>(null);
+  const [walletClient, setWalletClient] = useState<any>(null);
+	useEffect(() => {
+		ElvWalletClient.Initialize({
+			network,
+			mode,
+		}).then((client:any) => {
+			client.walletAppUrl = walletAppUrl;
 
+			window.client = client;
+
+			// Replace CanSign method to force popup flow for personal sign with custodial wallet user
+			client.CanSign = () =>
+				client.loggedIn &&
+				client.UserInfo().walletName.toLowerCase() === "metamask";
+
+			setWalletClient(client);
+		});
+	}, []);
   useEffect(()=>{
     if ("solana" in window) {
         const solWindow = window as WindowWithSolana;
@@ -169,14 +193,16 @@ export default function WalletPopup({ id, navBar = false }: UserWalletProps) {
       await signInMetaMask();
     } else if (wallet_n === "Phantom") {
       await signInPhantom();
+    } else if (wallet_n === "Connect Eluvio"){
+      await signInEluvio();
     }
-    toast({
-      title: "Connected!",
-      description: `Successfully connected ${wallet_n}!`,
-      status: "success",
-      duration: 2000,
-      isClosable: false,
-    });
+      toast({
+        title: "Connected!",
+        description: `Successfully connected ${wallet_n}!`,
+        status: "success",
+        duration: 2000,
+        isClosable: false,
+      });
     if (wallet_n === "MetaMask") {
       signInMetaMask();
     } else if (wallet_n === "Phantom") {
@@ -242,6 +268,29 @@ export default function WalletPopup({ id, navBar = false }: UserWalletProps) {
     provider?.connect()
     .catch((err) => { console.error("connect ERROR:", err); });
   };
+
+  const signInEluvio = async () => {
+    console.log("Eluvio handler");
+    console.log(`connect handler`);
+    if (walletClient) {
+      await walletClient.LogIn({
+        method: "popup",
+        callbackUrl: window.location.href,
+        marketplaceParams,
+        clearLogin: true,
+      });
+    }
+    
+ 
+  };
+
+  const signOutEluvio = async () => {
+    if (walletClient) {
+      await walletClient.LogOut();
+    }
+    
+  };
+  
 
   const signOutMetaMask = () => {
     setDefaultAccount(null);
