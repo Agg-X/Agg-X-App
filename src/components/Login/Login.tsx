@@ -24,6 +24,17 @@ const socialData = [
   },
 ];
 
+const LoginSuccess = () => {
+  const toast = useToast();
+  toast({
+    title: "Log in!",
+    description: `Successfully logged in!`,
+    status: "success",
+    duration: 2000,
+    isClosable: false,
+  });
+};
+
 class Login extends Component {
   state: any = {
     initData: {},
@@ -37,7 +48,6 @@ class Login extends Component {
     });
   }
   render() {
-    const toast = useToast();
     return (
       <section className="author-area">
         <div className="container">
@@ -49,10 +59,7 @@ class Login extends Component {
                 <h3 className="mt-3 mb-0">{"Login to your Account"}</h3>
               </div>
               {/* Item Form */}
-              <form
-                className="item-form card no-hover"
-                action="http://localhost:8080/login"
-              >
+              <form className="item-form card no-hover" action="/login">
                 <div className="row">
                   <div className="col-12">
                     <div className="form-group mt-3">
@@ -100,15 +107,7 @@ class Login extends Component {
                     <button
                       className="btn w-100 mt-3 mt-sm-4"
                       type="submit"
-                      onClick={() => {
-                        toast({
-                          title: "Login Success",
-                          description: "Welcome",
-                          status: "success",
-                          duration: 9000,
-                          isClosable: true,
-                        });
-                      }}
+                      onClick={() => LoginSuccess()}
                     >
                       Sign In
                     </button>
