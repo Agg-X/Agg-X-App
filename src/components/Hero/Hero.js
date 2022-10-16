@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 const initData = {
     pre_heading: "AGG-X",
-    heading: "Aggregate, collect, and showcast extraordinary NFTs",
+    heading: "Aggregate, Collect, and Showcase Extraordinary NFTs",
     content: "Explore the First cross-chain NFT Aggregator and Credential Bridge",
     btn_1: "Explore",
     btn_2: "Create"

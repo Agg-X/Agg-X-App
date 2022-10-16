@@ -53,7 +53,7 @@ const Login = () => {
               <p>{initData.content}</p>
             </div>
             {/* Item Form */}
-            <form className="item-form card no-hover" action="http://localhost:8080/login">
+            <form className="item-form card no-hover" action="http://localhost:3000/login">
               <div className="row">
                 <div className="col-12">
                   <div className="form-group mt-3">

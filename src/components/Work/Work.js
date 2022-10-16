@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
+import { common } from "../Data/Data"
 
-const BASE_URL = "https://my-json-server.typicode.com/themeland/netstorm-json/work";
+// const BASE_URL = "https://my-json-server.typicode.com/themeland/netstorm-json/work";
 
 class Work extends Component {
     state = {
@@ -9,15 +10,19 @@ class Work extends Component {
         workData: []
     }
     componentDidMount(){
-        axios.get(`${BASE_URL}`)
-            .then(res => {
-                this.setState({
-                    data: res.data,
-                    workData: res.data.workData
-                })
-                // console.log(this.state.data)
-            })
-        .catch(err => console.log(err))
+        // axios.get(`${BASE_URL}`)
+        //     .then(res => {
+        //         this.setState({
+        //             data: res.data,
+        //             workData: res.data.workData
+        //         })
+        //         // console.log(this.state.data)
+        //     })
+        // .catch(err => console.log(err))
+        this.setState({
+            data: common["work"],
+            workData: common["work"]["workData"]
+        })
     }
     render() {
         return (

@@ -29,7 +29,7 @@ const data = [
         id: "6",
         icon: "icon icon-flag text-effect",
         title: "Developers",
-        content: "Learn how you can partner with us to showcase your NFT drops and how you can develop with AggEx"
+        content: "Learn how you can partner with us to showcase your NFT drops and how you can develop with AggX"
     }
 ]
 
