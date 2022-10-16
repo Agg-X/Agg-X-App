@@ -24,30 +24,33 @@ const socialData = [
   },
 ];
 
-const LoginSuccess = () => {
-  const toast = useToast();
-  toast({
-    title: "Log in!",
-    description: `Successfully logged in!`,
-    status: "success",
-    duration: 2000,
-    isClosable: false,
-  });
-};
+const Login = () => {
+  // state: any = {
+  //   initData: {},
+  //   data: [],
+  // };
 
-class Login extends Component {
-  state: any = {
-    initData: {},
-    data: [],
+  // componentDidMount() {
+  //   this.setState({
+  //     initData: initData,
+  //     data: socialData,
+  //   });
+  // }
+  const toast = useToast();
+  src/components/Login/Login.tsx
+  const loginSuccess = (event: any) => {
+    console.log("login suc")
+    event.preventDefault();
+    toast({
+      title: "Log in!",
+      description: `Successfully logged in!`,
+      status: "success",
+      duration: 2000,
+      isClosable: false,
+    });
   };
 
-  componentDidMount() {
-    this.setState({
-      initData: initData,
-      data: socialData,
-    });
-  }
-  render() {
+  // render() {
     return (
       <section className="author-area">
         <div className="container">
@@ -59,13 +62,13 @@ class Login extends Component {
                 <h3 className="mt-3 mb-0">{"Login to your Account"}</h3>
               </div>
               {/* Item Form */}
-              <form className="item-form card no-hover" action="/login">
+              <form className="item-form card no-hover">
                 <div className="row">
                   <div className="col-12">
                     <div className="form-group mt-3">
                       <input
-                        type="email"
-                        className="form-control"
+                        // type="email"
+                        // className="form-control"
                         name="email"
                         placeholder="Enter your Email"
                         required
@@ -75,8 +78,8 @@ class Login extends Component {
                   <div className="col-12">
                     <div className="form-group mt-3">
                       <input
-                        type="password"
-                        className="form-control"
+                        // type="password"
+                        // className="form-control"
                         name="password"
                         placeholder="Enter your Password"
                         required
@@ -107,7 +110,7 @@ class Login extends Component {
                     <button
                       className="btn w-100 mt-3 mt-sm-4"
                       type="submit"
-                      onClick={() => LoginSuccess()}
+                      onClick={loginSuccess}
                     >
                       Sign In
                     </button>
@@ -123,7 +126,7 @@ class Login extends Component {
                       <span className="d-block text-center mb-4">Or</span>
                       {/* Social Icons */}
                       <div className="social-icons d-flex justify-content-center">
-                        {this.state.data.map((item: any, idx: any) => {
+                        {socialData.map((item: any, idx: any) => {
                           return (
                             <a
                               key={`lsd_${idx}`}
@@ -146,6 +149,6 @@ class Login extends Component {
       </section>
     );
   }
-}
+// }
 
 export default Login;
