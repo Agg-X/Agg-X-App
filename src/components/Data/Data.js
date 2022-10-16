@@ -15,7 +15,7 @@ export const allNftData = [
         "img": "/img/sol2.jpg",
         "title": "CopeTown",
         "owner": "John Deo",
-        "price": "27 S",
+        "price": "27 SOL",
         "count": "1 of 1",
         "blockchain":"Solana",
     },
@@ -53,7 +53,7 @@ export const allNftData = [
         "img": "/img/sol3.jpg",
         "title": "NFTrees Solana",
         "owner": "John Deo",
-        "price": "4 S",
+        "price": "4 SOL",
         "count": "1 of 1",
         "blockchain":"Solana",
     },
@@ -158,7 +158,7 @@ export const solNftData = [
         "img": "/img/sol1.jpg",
         "title": "Sorcies",
         "owner": "Richard",
-        "price": "1.72 S",
+        "price": "1.72 SOL",
         "count": "1 of 1",
         "blockchain":"Solana",
     },
@@ -167,7 +167,7 @@ export const solNftData = [
         "img": "/img/sol2.jpg",
         "title": "CopeTown",
         "owner": "John Deo",
-        "price": "27 S",
+        "price": "27 SOL",
         "count": "1 of 1",
         "blockchain":"Solana",
     },
@@ -176,7 +176,7 @@ export const solNftData = [
         "img": "/img/sol3.jpg",
         "title": "NFTrees Solana",
         "owner": "John Deo",
-        "price": "4 S",
+        "price": "4 SOL",
         "count": "1 of 1",
         "blockchain":"Solana",
     },
@@ -190,7 +190,7 @@ export const eluNftData = [
         "owner": "Junaid",
         "price": "1.7 ETH",
         "count": "1 of 1",
-        "btnText": "View NFT"
+        "blockchain":"Eluvio",
     },
     {
         "id": 6,
@@ -199,7 +199,7 @@ export const eluNftData = [
         "owner": "ArtNox",
         "price": "1.9 ETH",
         "count": "1 of 1",
-        "btnText": "View NFT"
+        "blockchain":"Eluvio",
     },
 ]
 

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 const initData = {
     pre_heading: "Features",
     heading: "What do we provide?",
-    content: "AggX is your one-stop shop for building a social profile based on your NFT collections. From minting your NFT credential to viewing your friends' NFT collections, AggX supports NFT aggregation on multiple chains, such as Ethereum, Solana, Eluvio, Avalanche, and Aptos."
+    content: ""
 }
 
 const data = [
