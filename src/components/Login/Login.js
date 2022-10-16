@@ -1,5 +1,5 @@
 import React, { Component,useState } from "react";
-
+import { useToast } from "@chakra-ui/react";
 
 const initData = {
   pre_heading: "Login",
@@ -37,7 +37,7 @@ class Login extends Component {
     });
   }
   render() {
-
+    const toast = useToast()
     return (
       <section className="author-area">
         <div className="container">
@@ -95,7 +95,15 @@ class Login extends Component {
                     </div>
                   </div>
                   <div className="col-12">
-                    <button className="btn w-100 mt-3 mt-sm-4" type="submit">
+                    <button className="btn w-100 mt-3 mt-sm-4" type="submit" onClick={()=>{
+                      toast({
+                        title: "Login Success",
+                        description: "Welcome",
+                        status: "success",
+                        duration: 9000,
+                        isClosable: true,
+                      });
+                    }}>
                       Sign In
                     </button>
                   </div>
