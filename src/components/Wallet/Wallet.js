@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Status from "../Status/Status"
 
 const data = {
   preHeading: "Blockchain Connect",
@@ -85,7 +84,6 @@ class Activity extends Component {
                       <h4 className="mb-0">{item.title}</h4>
                       <p>{item.content}</p>
                     </a>
-                    <Status/>
                   </div>
                 </div>
               );
