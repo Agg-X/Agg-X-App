@@ -1,5 +1,6 @@
 import React, { Component, useState } from "react";
 import { useToast } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
 const initData = {
   pre_heading: "Login",
@@ -37,7 +38,9 @@ const Login = () => {
   //   });
   // }
   const toast = useToast();
-  src/components/Login/Login.tsx
+
+  const navigate = useNavigate()
+
   const loginSuccess = (event: any) => {
     console.log("login suc")
     event.preventDefault();
@@ -48,6 +51,9 @@ const Login = () => {
       duration: 2000,
       isClosable: false,
     });
+    console.log("nav")
+    navigate(("/wallet-connect"));
+    console.log("nav3")
   };
 
   // render() {
