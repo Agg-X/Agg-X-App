@@ -380,8 +380,8 @@ export const common = {
       {
         id: 4,
         icon: "icons icon-bag text-effect",
-        title: "Get you Credentails",
-        text: "Get you NFT collectiable cretentials from one blockchain to any other blockchain by minting an upgradeable Soul Bound Token via AggX.",
+        title: "Get you Credentials",
+        text: "Get you NFT collectiable credentials from one blockchain to any other blockchain by minting an upgradeable Soul Bound Token via AggX.",
       },
     ],
   },
