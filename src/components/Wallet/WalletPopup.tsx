@@ -6,7 +6,6 @@ import {
   Stack,
   useToast,
 } from "@chakra-ui/react";
-import { injected, walletconnect } from "../Hooks/connectors";
 import React, { useEffect, useState } from "react";
 import { useWeb3React } from "@web3-react/core";
 import { useNavigate } from "react-router-dom";
@@ -94,26 +93,6 @@ export default function WalletPopup({ id, navBar = false }: UserWalletProps) {
     }
   }, []);
 
-  useEffect(() => {
-    if (!selectedConnector) {
-      return;
-    }
-    try {
-      var wallets = JSON.parse(window.localStorage.getItem("connectedWallets"));
-      for (var wallet of wallets) {
-        if (wallet === id) setThisConnected(true);
-      }
-    } catch {
-      window.localStorage.setItem("connectedWallets", "[]");
-    }
-    if (selectedConnector === WalletConnector.MetaMask) {
-      injected.isAuthorized().then((isAuthorized) => {
-        if (isAuthorized) {
-          activate(injected, undefined, true);
-        }
-      });
-    }
-  }, [activate]);
 
   useEffect( () => {
     provider?.on("connect", (publicKey: PublicKey)=>{ 
@@ -170,21 +149,7 @@ export default function WalletPopup({ id, navBar = false }: UserWalletProps) {
     }
   };
 
-  const handleActivate = (wallectConnector: WalletConnector | null) => {
-    window.localStorage.setItem(
-      "wallectConnector",
-      wallectConnector || WalletConnector.MetaMask,
-    );
-    setSelectedConnector(wallectConnector);
-    console.log(wallectConnector);
-    activate(
-      wallectConnector === WalletConnector.WalletConnect
-        ? walletconnect
-        : injected,
-    );
-    if (isOpen) navigate("/explore-1");
-    setIsOpen(false);
-  };
+
 
   const connectHandler = async (id: number, wallet_n: string) => {
     if (wallet_n === "MetaMask") {
