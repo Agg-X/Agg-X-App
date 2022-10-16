@@ -49,7 +49,6 @@ type WindowWithSolana = Window & {
 }
 
 export default function WalletPopup({ id, navBar = false }: UserWalletProps) {
-  const context = useWeb3React();
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [defaultAccount, setDefaultAccount] = useState(null);
@@ -58,8 +57,6 @@ export default function WalletPopup({ id, navBar = false }: UserWalletProps) {
     useState<WalletConnector | null>(
       window.localStorage.getItem("wallectConnector") as WalletConnector,
     );
-  const { library, account, active, activate, chainId, error, deactivate } =
-    context;
   const toast = useToast();
   const [ walletAvail, setWalletAvail ] = useState(false);
   const [ provider, setProvider ] = useState<PhantomProvider | null>(null);
@@ -116,17 +113,7 @@ export default function WalletPopup({ id, navBar = false }: UserWalletProps) {
     ["Martian", "Petra", "Fewcha"],
   ];
 
-  const handleChangeAccount = () => {
-    deactivate();
-    window.localStorage.removeItem("wallectConnector");
-    setIsOpen(true);
-  };
 
-  const handleDisconnect = () => {
-    deactivate();
-    window.localStorage.removeItem("wallectConnector");
-    navigate("/");
-  };
 
   const handleSwitchNetwork = async (networkId: number) => {
     try {
