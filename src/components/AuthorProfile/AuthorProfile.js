@@ -35,8 +35,7 @@ class AuthorProfile extends Component {
                 <div className="card-caption col-12 p-0">
                     {/* Card Body */}
                     <div className="card-body mt-4">
-                        <h5 className="mb-3">{this.state.data.author}</h5>
-                        <p className="my-3">{this.state.data.content}</p>
+                        <h5 className="mb-3">Xingyu.Eth</h5>
                         <div className="input-group">
                             <input type="text" className="form-control" placeholder={this.state.data.authorId} />
                             <div className="input-group-append">
@@ -54,7 +53,7 @@ class AuthorProfile extends Component {
                                 );
                             })}
                         </div>
-                        <a className="btn btn-bordered-white btn-smaller" href="#">{this.state.data.btnText}</a>
+                       
                     </div>
                 </div>
             </div>
