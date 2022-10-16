@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+import React, { Component,useState } from "react";
+
 
 const initData = {
   pre_heading: "Login",
@@ -28,6 +29,7 @@ class Login extends Component {
     initData: {},
     data: [],
   };
+
   componentDidMount() {
     this.setState({
       initData: initData,
@@ -35,6 +37,7 @@ class Login extends Component {
     });
   }
   render() {
+
     return (
       <section className="author-area">
         <div className="container">
@@ -47,7 +50,7 @@ class Login extends Component {
                 <p>{this.state.initData.content}</p>
               </div>
               {/* Item Form */}
-              <form className="item-form card no-hover">
+              <form className="item-form card no-hover" action="http://localhost:8080/login">
                 <div className="row">
                   <div className="col-12">
                     <div className="form-group mt-3">

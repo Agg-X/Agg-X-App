@@ -80,7 +80,6 @@ const Connect2Eluvio = () => {
 				<div className="container">
 					<div className="row">
 						<div className="col-12">
-							<h1>Eluvio Wallet</h1>
 							<AuthSection walletClient={walletClient} />
 						</div>
 					</div>
